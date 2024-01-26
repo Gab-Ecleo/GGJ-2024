@@ -1,9 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody))]
 public class PlayerMovement : MonoBehaviour
 {
+    [Range (1,15)] [SerializeField] private float nodLimit;
     [SerializeField] private float mouseSensitivity;
     [SerializeField] private float moveSpeed;
 
@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 horizontalInput;
     private Vector3 verticalInput;
     private Vector3 moveInput;
+    private float headNod;
 
     private void Awake()
     {
@@ -27,6 +28,7 @@ public class PlayerMovement : MonoBehaviour
     {
         RotatePlayer();
         MovePlayer();
+        HeadMovement();
     }
 
     private void UpdateInput()
@@ -48,5 +50,18 @@ public class PlayerMovement : MonoBehaviour
         moveInput = moveInput.normalized * moveSpeed * Time.fixedDeltaTime;
 
         rb.MovePosition(transform.position + moveInput);
+    }
+
+    private void HeadMovement()
+    {
+        float mouseX = Input.GetAxis("Mouse X");
+        float mouseY = Input.GetAxis("Mouse Y");
+        Vector2 mouseOrientation = new Vector2(mouseX, mouseY);
+
+        headNod -= mouseOrientation.y * mouseSensitivity;
+        headNod = Mathf.Clamp(headNod, -nodLimit, nodLimit);
+
+        Camera.main.transform.localEulerAngles = Vector3.right * headNod;
+        transform.Rotate(Vector3.up * mouseOrientation.x * mouseSensitivity);
     }
 }
