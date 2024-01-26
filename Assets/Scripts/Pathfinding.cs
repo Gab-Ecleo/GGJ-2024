@@ -23,7 +23,7 @@ public class Pathfinding : MonoBehaviour
     {
         agent.transform.LookAt(Camera.main.transform.position);
         if (distance < detectionRange) 
-            agent.SetDestination(player.position * -1);
+            agent.SetDestination((player.position - transform.position));
     }
     #endregion
     
