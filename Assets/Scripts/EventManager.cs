@@ -5,5 +5,5 @@ using UnityEngine;
 
 public class EventManager : MonoBehaviour
 {
-    public Action ON_LAUGH;
+    public static Action ON_LAUGH;
 }

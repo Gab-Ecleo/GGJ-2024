@@ -9,6 +9,6 @@ public class NPCCollision : MonoBehaviour
     {
         if (!collision.gameObject.CompareTag("Player")) return;
 
-        Debug.Log("Laugh");
+        EventManager.ON_LAUGH?.Invoke();
     }
 }
