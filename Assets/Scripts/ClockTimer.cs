@@ -18,11 +18,6 @@ public class ClockTimer : MonoBehaviour
         EventManager.ON_GAMESTART += StartClock;
     }
 
-    private void Start()
-    {
-        EventManager.ON_GAMESTART?.Invoke();
-    }
-
     private void Update()
     {
         if (!timerStart) return;
