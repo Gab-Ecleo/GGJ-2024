@@ -18,20 +18,15 @@ public class ClockTimer : MonoBehaviour
         EventManager.ON_GAMESTART += StartClock;
     }
 
-    private void Start()
-    {
-        EventManager.ON_GAMESTART?.Invoke();
-    }
-
     private void Update()
     {
+        if (!timerStart) return;
         TimerCountdown();
         TimerEnder();
     }
 
     private void TimerCountdown()
     {
-        if (!timerStart) return;
         timer -= Time.deltaTime;
         countdownText.text = Mathf.Round(timer).ToString();
     }
