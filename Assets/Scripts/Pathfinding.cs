@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -31,11 +32,21 @@ public class Pathfinding : MonoBehaviour
     private void Update()
     {
         agent.transform.LookAt(Camera.main.transform.position);
-        if (distance < detectionRange && !isRunning)
+        if (distance < detectionRange && !isRunning) StartCoroutine("Escape");
+    }
+
+    private IEnumerator Escape()
+    {
+        Vector3 targetPos = escapeRoute[randomIndex].position;
+        agent.SetDestination(targetPos);
+        isRunning = true;
+        while (isRunning)
         {
-            agent.SetDestination(escapeRoute[randomIndex].position);
-            isRunning = true;
+            isRunning = agent.transform.position == targetPos ? false : true;
+            yield return null;
         }
+        yield return null;
+
     }
     #endregion
     
