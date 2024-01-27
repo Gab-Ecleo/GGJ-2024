@@ -11,6 +11,7 @@ public class Pathfinding : MonoBehaviour
     private NavMeshAgent agent;
     private Transform player;
     private Vector3 direction;
+    private Animator animator;
 
     private int lastIndex = 0;
     private bool isRunning;
@@ -28,6 +29,9 @@ public class Pathfinding : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
+
+        animator = GetComponent<Animator>();
+
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         isRunning = false;
 
@@ -39,11 +43,19 @@ public class Pathfinding : MonoBehaviour
         if (!isRunning)
         {
             direction = escapeRoute[IndexSelector()].position;
-            agent.SetDestination(direction);
+            StartCoroutine(ShockDelay());
             isRunning = true;
         }
 
         RunStopper();
+    }
+
+    private IEnumerator ShockDelay()
+    {
+        EventManager.ON_NPCSHOCK?.Invoke(animator);
+        yield return new WaitForSeconds(1);
+        agent.SetDestination(direction);
+        EventManager.ON_NPCRUNNING?.Invoke(animator);
     }
 
     private void SetEscapeRoutes(Transform[] routes)
