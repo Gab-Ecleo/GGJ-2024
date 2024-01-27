@@ -7,14 +7,11 @@ public class ClockTimer : MonoBehaviour
 {
     [SerializeField] private float clockTime = 60;
 
-    private TextMeshProUGUI countdownText;
     private bool timerStart = false;
     private float timer;
 
     private void Awake()
     {
-        countdownText = GetComponent<TextMeshProUGUI>();
-
         EventManager.ON_GAMESTART += StartClock;
     }
 
@@ -28,7 +25,7 @@ public class ClockTimer : MonoBehaviour
     private void TimerCountdown()
     {
         timer -= Time.deltaTime;
-        countdownText.text = Mathf.Round(timer).ToString();
+        EventManager.ON_TIMERCHANGE?.Invoke(timer);
     }
 
     private void TimerEnder()
@@ -42,7 +39,7 @@ public class ClockTimer : MonoBehaviour
     private void StartClock()
     {
         timer = clockTime;
-        countdownText.text = Mathf.Round(timer).ToString();
+        EventManager.ON_TIMERCHANGE?.Invoke(timer);
         timerStart = true;
     }
     private void OnDestroy()
