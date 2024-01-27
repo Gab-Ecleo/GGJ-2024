@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6608976715561379875}
+  - component: {fileID: 2995533225161886708}
   - component: {fileID: 2081007063697593401}
   - component: {fileID: 8396906629937669633}
   - component: {fileID: 4374910328766494278}
@@ -16,7 +17,7 @@ GameObject:
   - component: {fileID: 3024543640156441371}
   m_Layer: 0
   m_Name: Human
-  m_TagString: Untagged
+  m_TagString: Trees
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29,13 +30,25 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7562099603759592020}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.6318727, z: -0, w: 0.7750722}
+  m_LocalRotation: {x: 0, y: -0.6318738, z: 0, w: 0.7750714}
   m_LocalPosition: {x: 0, y: 1.18, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -78.377, z: 0}
+--- !u!114 &2995533225161886708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7562099603759592020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89f18105cc23c0f4582377d43cf5b8bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &2081007063697593401
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -109,19 +122,19 @@ NavMeshAgent:
   m_GameObject: {fileID: 7562099603759592020}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.50000006
-  m_Speed: 3.5
-  m_Acceleration: 8
+  m_Radius: 0.24
+  m_Speed: 2
+  m_Acceleration: 1
   avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
+  m_AngularSpeed: 1
+  m_StoppingDistance: 5
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 1
   m_BaseOffset: 0.5
   m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
+  m_ObstacleAvoidanceType: 2
 --- !u!114 &895635702656532175
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -134,8 +147,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dc81ed2675e4304ab190372ca643c3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  escapeRoute: []
-  detectionRange: 5
+  escapeRoute:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  detectionRange: 10
 --- !u!136 &3024543640156441371
 CapsuleCollider:
   m_ObjectHideFlags: 0

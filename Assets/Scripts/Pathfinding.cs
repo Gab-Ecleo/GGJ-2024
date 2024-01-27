@@ -10,7 +10,9 @@ public class Pathfinding : MonoBehaviour
     [SerializeField] private float detectionRange;
     private NavMeshAgent agent;
     private Transform player;
+    private Vector3 direction;
 
+    private int lastIndex = 0;
     private bool isRunning;
 
     private int randomIndex
@@ -25,29 +27,39 @@ public class Pathfinding : MonoBehaviour
     private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
+        agent.updateRotation = false;
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         isRunning = false;
     }
 
     private void Update()
     {
-        agent.transform.LookAt(Camera.main.transform.position);
-        if (distance < detectionRange && !isRunning) StartCoroutine("Escape");
+        if (!isRunning)
+        {
+            direction = escapeRoute[IndexSelector()].position;
+            agent.SetDestination(direction);
+            isRunning = true;
+        }
+
+        RunStopper();
     }
 
-    private IEnumerator Escape()
+    private int IndexSelector()
     {
-        Vector3 targetPos = escapeRoute[randomIndex].position;
-        agent.SetDestination(targetPos);
-        isRunning = true;
-        while (isRunning)
+        var randomPos = randomIndex;
+        while (randomPos == lastIndex)
         {
-            isRunning = agent.transform.position == targetPos ? false : true;
-            yield return null;
+            randomPos = randomIndex;
         }
-        yield return null;
+        return randomPos;
+    }
 
+    private void RunStopper()
+    {
+        float distance = Vector3.Distance(transform.position, direction);
+        if (distance > 5) return;
+        isRunning = false;
     }
     #endregion
-    
+
 }
