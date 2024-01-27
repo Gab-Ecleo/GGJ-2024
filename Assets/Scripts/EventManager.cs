@@ -14,6 +14,7 @@ public class EventManager : MonoBehaviour
 
     public static Action<float> ON_TIMERCHANGE;
     public static Action<float> ON_METERCHANGE;
+    public static Action ON_WALK;
 
     public static Action<Transform[]> SET_ESCAPEROUTE;
     

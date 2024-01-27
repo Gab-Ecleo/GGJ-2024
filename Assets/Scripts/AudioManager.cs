@@ -18,16 +18,12 @@ public class AudioManager : MonoBehaviour
 
     [SerializeField] private AudioSource[] GameBGMS;
 
-    private AudioSource monoAudioSrc;
-
     private int temp = 0;
 
     private void Awake()
     {
         if (Instance == null) Instance = this;
         else if (Instance != this) Destroy(gameObject);
-
-        monoAudioSrc = GetComponent<AudioSource>();
 
         EventManager.ON_MONOSFX += PlaySFX;
         EventManager.ON_STEREOSFX += PlaySFX;
@@ -48,7 +44,7 @@ public class AudioManager : MonoBehaviour
 
     private void PlaySFX(AudioClip clip)
     {
-        monoAudioSrc.PlayOneShot(clip);
+        SFXSource.PlayOneShot(clip);
     }
 
     private void PlaySFX(AudioClip clip, AudioSource source)
@@ -58,9 +54,9 @@ public class AudioManager : MonoBehaviour
 
     private void PlayBGM(AudioClip clip)
     {
-        monoAudioSrc.clip = clip;
-        monoAudioSrc.loop = true;
-        monoAudioSrc.Play();
+        SFXSource.clip = clip;
+        SFXSource.loop = true;
+        SFXSource.Play();
     }
 
     private void StartGameBGM()
