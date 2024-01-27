@@ -9,6 +9,11 @@ public class GameManager : MonoBehaviour
         EventManager.ON_GAMEEND += GameOver;
     }
 
+    private void Start()
+    {
+        EventManager.ON_GAMESTART?.Invoke();
+    }
+
     private void GameOver()
     {
         //Check Happiness Meter
