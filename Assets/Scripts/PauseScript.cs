@@ -7,6 +7,7 @@ public class PauseScript : MonoBehaviour
     private void Awake()
     {
         animator = GetComponent<Animator>();
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     private void Update()
@@ -17,12 +18,14 @@ public class PauseScript : MonoBehaviour
 
     private void PauseGame()
     {
+        Cursor.lockState = CursorLockMode.Locked;
         animator.SetTrigger("PauseGame");
         Time.timeScale = 0;
     }
 
     public void ResumeGame()
     {
+        Cursor.lockState = CursorLockMode.None;
         animator.SetTrigger("ResumeGame");
         Time.timeScale = 1;
     }
