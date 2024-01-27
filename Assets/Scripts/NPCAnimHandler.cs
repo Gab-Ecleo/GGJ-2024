@@ -15,20 +15,24 @@ public class NPCAnimHandler : MonoBehaviour
     private void IdleNPC(Animator animator)
     {
         animator.SetTrigger("idle");
+        Debug.Log("IDLE");
     }
 
     private void ShockNPC(Animator animator)
     {
         animator.SetTrigger("shock");
+        Debug.Log("SHOCK");
     }
 
     private void RunningNPC(Animator animator)
     {
         animator.SetTrigger("running");
+        Debug.Log("RUN");
     }
     private void LaughNPC(Animator animator)
     {
         animator.SetTrigger("laugh");
+        Debug.Log("LAUGH");
     }
 
     private void OnDestroy()

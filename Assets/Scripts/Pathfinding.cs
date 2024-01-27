@@ -53,7 +53,8 @@ public class Pathfinding : MonoBehaviour
     private IEnumerator ShockDelay()
     {
         EventManager.ON_NPCSHOCK?.Invoke(animator);
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(3);
+        if (!agent.enabled) yield break;
         agent.SetDestination(direction);
         EventManager.ON_NPCRUNNING?.Invoke(animator);
     }

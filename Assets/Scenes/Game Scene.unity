@@ -12210,6 +12210,50 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1055097355}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &407948170
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 407948172}
+  - component: {fileID: 407948171}
+  m_Layer: 0
+  m_Name: NPC Animator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &407948171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 407948170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dca43d32bd1f9a4eb9ed97f4e34418f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &407948172
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 407948170}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &408501101 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3026505229091167643, guid: 69c3b716fe82e124290185d387a3593e,
@@ -62752,3 +62796,4 @@ SceneRoots:
   - {fileID: 1024209026}
   - {fileID: 1027029378336061942}
   - {fileID: 428730724}
+  - {fileID: 407948172}
