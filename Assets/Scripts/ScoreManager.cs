@@ -12,6 +12,7 @@ public class ScoreManager : MonoBehaviour
     private void Awake()
     {
         EventManager.ON_LAUGH += AddScore;
+        EventManager.ON_GAMEEND += WinCondition;
     }
 
     private void AddScore()
@@ -23,8 +24,25 @@ public class ScoreManager : MonoBehaviour
         EventManager.ON_DIFFICULTYINCREASE?.Invoke();
     }
 
+    private void WinCondition()
+    {
+        if(score <= 5)
+        {
+            Debug.Log("You made some people laugh.");
+        }
+        else if(score <= 10)
+        {
+            Debug.Log("You made most people laugh.");
+        }
+        else if(score <= 15)
+        {
+            Debug.Log("Killer Clown on the lose.");
+        }
+    }
+
     private void OnDestroy()
     {
         EventManager.ON_LAUGH -= AddScore;
+        EventManager.ON_GAMEEND -= WinCondition;
     }
 }
