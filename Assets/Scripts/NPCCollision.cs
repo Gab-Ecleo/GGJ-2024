@@ -8,12 +8,14 @@ public class NPCCollision : MonoBehaviour
     private bool allowLaugh = true;
 
     private NavMeshAgent agent;
-    private CapsuleCollider collider;
+    private CapsuleCollider objCollider;
+    private Animator animator;
 
     private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
-        collider = GetComponent<CapsuleCollider>();
+        objCollider = GetComponent<CapsuleCollider>();
+        animator = GetComponent<Animator>();
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -22,7 +24,8 @@ public class NPCCollision : MonoBehaviour
         if (!collision.gameObject.CompareTag("Player")) return;
         allowLaugh = false;
         agent.enabled = false;
-        collider.isTrigger = true;
+        objCollider.isTrigger = true;
         EventManager.ON_LAUGH?.Invoke();
+        EventManager.ON_NPCLAUGH?.Invoke(animator);
     }
 }
