@@ -161,6 +161,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   detectionRange: 10
 --- !u!136 &3024543640156441371
 CapsuleCollider:

@@ -6,8 +6,8 @@ public class Pathfinding : MonoBehaviour
 {
     #region Variables
 
-    [SerializeField] private Transform[] escapeRoute;
     [SerializeField] private float detectionRange;
+    private Transform[] escapeRoute;
     private NavMeshAgent agent;
     private Transform player;
     private Vector3 direction;
@@ -30,6 +30,8 @@ public class Pathfinding : MonoBehaviour
         agent.updateRotation = false;
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         isRunning = false;
+
+        EventManager.SET_ESCAPEROUTE += SetEscapeRoutes;
     }
 
     private void Update()
@@ -42,6 +44,11 @@ public class Pathfinding : MonoBehaviour
         }
 
         RunStopper();
+    }
+
+    private void SetEscapeRoutes(Transform[] routes)
+    {
+        escapeRoute = routes;
     }
 
     private int IndexSelector()
@@ -59,6 +66,11 @@ public class Pathfinding : MonoBehaviour
         float distance = Vector3.Distance(transform.position, direction);
         if (distance > 5) return;
         isRunning = false;
+    }
+
+    private void OnDestroy()
+    {
+        EventManager.SET_ESCAPEROUTE -= SetEscapeRoutes;
     }
     #endregion
 
