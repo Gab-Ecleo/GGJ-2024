@@ -42,6 +42,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void RotatePlayer()
     {
+        rb.angularVelocity = Vector3.zero;
         rb.MoveRotation(rb.rotation * Quaternion.Euler(playerRotation));
     }
 
