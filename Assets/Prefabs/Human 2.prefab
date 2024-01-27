@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8100973543504092041}
+  - component: {fileID: 6401958829587315108}
   - component: {fileID: 6846294716026216750}
   - component: {fileID: 8330487188698051167}
   - component: {fileID: 5829506573544518516}
@@ -40,6 +41,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6401958829587315108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 793192346262391616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93c264e12cf6a6641819b82f2b01e132, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: ca63d40b170335149bf4b746ddb7ecaa, type: 3}
 --- !u!114 &6846294716026216750
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -91,6 +105,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   detectionRange: 5
+  scaredClip: {fileID: 8300000, guid: 9ebdd6c9a7b1df94bbbb0afaee037f61, type: 3}
 --- !u!212 &3705594168644458505
 SpriteRenderer:
   m_ObjectHideFlags: 0

@@ -37,6 +37,10 @@ public class PlayerMovement : MonoBehaviour
 
         horizontalInput = transform.right * Input.GetAxisRaw("Horizontal");
         verticalInput = transform.forward * Input.GetAxisRaw("Vertical");
+
+        if (Input.GetAxisRaw("Horizontal") != 0) EventManager.ON_WALK?.Invoke();
+        if (Input.GetAxisRaw("Vertical") != 0) EventManager.ON_WALK?.Invoke();
+
         moveInput = horizontalInput + verticalInput;
     }
 
