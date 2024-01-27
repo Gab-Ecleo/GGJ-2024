@@ -105,6 +105,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   detectionRange: 5
+  scaredClip: {fileID: 8300000, guid: ae838efc88da97144bdb1266cd0aa837, type: 3}
 --- !u!212 &8396906629937669633
 SpriteRenderer:
   m_ObjectHideFlags: 0

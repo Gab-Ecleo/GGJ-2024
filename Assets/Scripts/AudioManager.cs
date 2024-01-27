@@ -33,15 +33,6 @@ public class AudioManager : MonoBehaviour
         EventManager.ON_GAMESTART += StartGameBGM;
     }
 
-    private void Update()
-    {
-        if (!Input.GetKeyDown(KeyCode.Space)) return;
-        temp++;
-        if (temp > 2) temp = 0;
-        EventManager.ON_CHANGEBGM((GameBGMState)temp);
-        
-    }
-
     private void PlaySFX(AudioClip clip)
     {
         SFXSource.PlayOneShot(clip);

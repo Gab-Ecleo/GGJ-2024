@@ -7,11 +7,13 @@ public class Pathfinding : MonoBehaviour
     #region Variables
 
     [SerializeField] private float detectionRange;
+    [SerializeField] private AudioClip scaredClip;
     private Transform[] escapeRoute;
     private NavMeshAgent agent;
     private Transform player;
     private Vector3 direction;
     private Animator animator;
+    private AudioSource source;
 
     private int lastIndex = 0;
     private bool isRunning;
@@ -31,6 +33,7 @@ public class Pathfinding : MonoBehaviour
         agent.updateRotation = false;
 
         animator = GetComponent<Animator>();
+        source = GetComponent<AudioSource>();
 
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         isRunning = false;
@@ -54,6 +57,7 @@ public class Pathfinding : MonoBehaviour
     private IEnumerator ShockDelay()
     {
         EventManager.ON_NPCSHOCK?.Invoke(animator);
+        EventManager.ON_STEREOSFX?.Invoke(scaredClip, source);
         yield return new WaitForSeconds(2);
         if (!agent.enabled) yield break;
         agent.SetDestination(direction);
