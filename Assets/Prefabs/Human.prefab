@@ -90,7 +90,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dc81ed2675e4304ab190372ca643c3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  detectionRange: 10
+  detectionRange: 5
 --- !u!212 &8396906629937669633
 SpriteRenderer:
   m_ObjectHideFlags: 0

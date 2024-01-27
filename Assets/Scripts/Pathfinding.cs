@@ -42,6 +42,7 @@ public class Pathfinding : MonoBehaviour
     {
         if (!isRunning)
         {
+            if (Vector3.Distance(transform.position, player.position) > detectionRange) return;
             direction = escapeRoute[IndexSelector()].position;
             StartCoroutine(ShockDelay());
             isRunning = true;
@@ -53,7 +54,7 @@ public class Pathfinding : MonoBehaviour
     private IEnumerator ShockDelay()
     {
         EventManager.ON_NPCSHOCK?.Invoke(animator);
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(2);
         if (!agent.enabled) yield break;
         agent.SetDestination(direction);
         EventManager.ON_NPCRUNNING?.Invoke(animator);
