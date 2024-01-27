@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    private bool gameIsPaused;
 
     private void Awake()
     {
@@ -15,7 +16,6 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         EventManager.ON_GAMESTART?.Invoke();
-
     }
 
     public void Play()
