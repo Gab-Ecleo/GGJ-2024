@@ -16,12 +16,15 @@ public class TimerDisplay : MonoBehaviour
 
     private void DisplayTime(float timeRemaining)
     {
+        /*
         if (currentTime == Mathf.Floor(timeRemaining)) return;
         int minutes = Mathf.FloorToInt(timeRemaining / 60);
-        seconds = (int)timeRemaining % 60;
+        seconds = (int)timeRemaining % 60;*/
 
-        display.SetText((minutes < 1) ? seconds.ToString() : (minutes + " : " + (seconds < 10 ? "0" : "") + seconds));
-        currentTime = Mathf.Floor(timeRemaining);
+        //display.SetText((minutes < 1) ? seconds.ToString() : (minutes + " : " + (seconds < 10 ? "0" : "") + seconds));
+        display.SetText(Mathf.Floor(timeRemaining) + "");
+
+        //currentTime = Mathf.Floor(timeRemaining);
     }
 
     private void OnDestroy()
