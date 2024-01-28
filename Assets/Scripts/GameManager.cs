@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         EventManager.ON_GAMESTART?.Invoke();
+        Time.timeScale = 1;
     }
 
     public void Play()

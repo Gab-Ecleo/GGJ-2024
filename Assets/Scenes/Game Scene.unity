@@ -697,6 +697,11 @@ PrefabInstance:
       objectReference: {fileID: 210349747}
     - target: {fileID: 1855353556510429166, guid: fe4448b8eb556c740ad01dc2666e0843,
         type: 3}
+      propertyPath: m_RenderMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1855353556510429166, guid: fe4448b8eb556c740ad01dc2666e0843,
+        type: 3}
       propertyPath: m_PlaneDistance
       value: 1
       objectReference: {fileID: 0}
@@ -708,6 +713,11 @@ PrefabInstance:
     - target: {fileID: 2830876271447632712, guid: fe4448b8eb556c740ad01dc2666e0843,
         type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3159176982475436297, guid: fe4448b8eb556c740ad01dc2666e0843,
+        type: 3}
+      propertyPath: m_PresetInfoIsWorld
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8485730043728494785, guid: fe4448b8eb556c740ad01dc2666e0843,
@@ -2109,11 +2119,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 230086332702510809, guid: c332ec2d1ad00a94ab5d45c3d586721d,
+        type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1272543675594363977, guid: c332ec2d1ad00a94ab5d45c3d586721d,
         type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 210349747}
+    - target: {fileID: 1272543675594363977, guid: c332ec2d1ad00a94ab5d45c3d586721d,
+        type: 3}
+      propertyPath: m_RenderMode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1272543675594363977, guid: c332ec2d1ad00a94ab5d45c3d586721d,
         type: 3}
       propertyPath: m_PlaneDistance
@@ -7883,6 +7903,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4698153252051474037, guid: 06e55862c2078964e9b500f67132575e,
+        type: 3}
+      propertyPath: clip.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4698153252051474037, guid: 06e55862c2078964e9b500f67132575e,
+        type: 3}
+      propertyPath: clip.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 85a68657977e6164482a11cf0ea22f8f, type: 3}
+    - target: {fileID: 4698153252051474037, guid: 06e55862c2078964e9b500f67132575e,
+        type: 3}
+      propertyPath: clip.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 68e63b9f41a8216448246ce3139ad6c1, type: 3}
     - target: {fileID: 7815528303385401320, guid: 06e55862c2078964e9b500f67132575e,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -9982,6 +10017,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2393101447140234347, guid: 5d8b473ad11e0f143a3b8b11eedd186d,
+        type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5140748263855632519, guid: 5d8b473ad11e0f143a3b8b11eedd186d,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -9992,6 +10032,11 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 210349747}
+    - target: {fileID: 5683533437715871712, guid: 5d8b473ad11e0f143a3b8b11eedd186d,
+        type: 3}
+      propertyPath: m_RenderMode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5683533437715871712, guid: 5d8b473ad11e0f143a3b8b11eedd186d,
         type: 3}
       propertyPath: m_PlaneDistance
@@ -24023,6 +24068,11 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 210349747}
+    - target: {fileID: 871292531841264630, guid: 4d71e8603455dda4aa5aca32023416e6,
+        type: 3}
+      propertyPath: m_RenderMode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 948092210414037190, guid: 4d71e8603455dda4aa5aca32023416e6,
         type: 3}
       propertyPath: m_Pivot.x
@@ -24128,6 +24178,11 @@ PrefabInstance:
       propertyPath: anim
       value: 
       objectReference: {fileID: 543017497}
+    - target: {fileID: 3519789807655226859, guid: 4d71e8603455dda4aa5aca32023416e6,
+        type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5461732165552976944, guid: 4d71e8603455dda4aa5aca32023416e6,
         type: 3}
       propertyPath: m_Name
@@ -37141,6 +37196,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1859122441635700539, guid: 2321b5b6ea13f9b4791c849b81204000,
         type: 3}
+      propertyPath: clownCry
+      value: 
+      objectReference: {fileID: 8300000, guid: 81cf06d72a2109c46bb1065b901f7ca5, type: 3}
+    - target: {fileID: 1859122441635700539, guid: 2321b5b6ea13f9b4791c849b81204000,
+        type: 3}
       propertyPath: playerHUD
       value: 
       objectReference: {fileID: 158368926}
@@ -38672,7 +38732,7 @@ PrefabInstance:
     - target: {fileID: 4732364387894245713, guid: 441ce49946b93384ca44ac48872e4aa1,
         type: 3}
       propertyPath: clockTime
-      value: 80
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 5107317611512112797, guid: 441ce49946b93384ca44ac48872e4aa1,
         type: 3}
@@ -38698,6 +38758,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_PlaneDistance
       value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8993069825512571011, guid: 441ce49946b93384ca44ac48872e4aa1,
+        type: 3}
+      propertyPath: decreaseRates.Array.data[0]
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8993069825512571011, guid: 441ce49946b93384ca44ac48872e4aa1,
+        type: 3}
+      propertyPath: decreaseRates.Array.data[1]
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8993069825512571011, guid: 441ce49946b93384ca44ac48872e4aa1,
+        type: 3}
+      propertyPath: decreaseRates.Array.data[2]
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -75013,7 +75088,7 @@ PrefabInstance:
     - target: {fileID: 5343802019415841755, guid: 9873aba5c4662a84e80f5efca8169bec,
         type: 3}
       propertyPath: m_Volume
-      value: 0.4
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 5430846068731391278, guid: 9873aba5c4662a84e80f5efca8169bec,
         type: 3}
