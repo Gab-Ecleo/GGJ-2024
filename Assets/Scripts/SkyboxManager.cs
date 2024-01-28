@@ -10,7 +10,7 @@ public class SkyboxManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        SkyboxLight = GetComponent<GameObject>();
+        SkyboxLight = this.gameObject;
         SkyboxLight.transform.Rotate(50.045f, 112.516f, 96.509f, Space.Self);
     }
 

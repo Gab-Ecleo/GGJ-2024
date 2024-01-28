@@ -49916,7 +49916,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3d35a54c0f68b04dbb3fd5f86b4135f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SkyboxLight: {fileID: 1417157607}
+  SkyboxLight: {fileID: 1417157605}
 --- !u!1001 &1417715082
 PrefabInstance:
   m_ObjectHideFlags: 0
