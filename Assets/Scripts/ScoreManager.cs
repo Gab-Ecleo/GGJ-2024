@@ -21,6 +21,7 @@ public class ScoreManager : MonoBehaviour
     {
         EventManager.ON_LAUGH += AddScore;
         EventManager.ON_GAMEEND += WinCondition;
+        score = 0;
     }
 
     private void AddScore()
@@ -34,21 +35,21 @@ public class ScoreManager : MonoBehaviour
 
     private void WinCondition()
     {
-        if(score <= 5 && score >=1)
+        if(score <= 1 && score >=2)
         {
             peacefulEnding.SetActive(true);
             playerHUD.SetActive(false);
             // ADD transtition to Credits scene
             Debug.Log("You didn't made any people laugh.");
         }
-        else if(score <= 10 && score >= 6)
+        else if(score <= 4 && score >= 3)
         {
             hintingEnding.SetActive(true);
             playerHUD.SetActive(false);
             // ADD transtition to Credits scene
             Debug.Log("You made most people laugh.");
         }
-        else if(score >= 11)
+        else if(score >= 5)
         {
             realEnding.SetActive(true);
             playerHUD.SetActive(false);
@@ -78,7 +79,11 @@ public class ScoreManager : MonoBehaviour
     {
         Debug.Log(score);
 
-        if (Input.GetKeyDown(KeyCode.Space))
-            score = 20;
+        if (score >= 1 && score <= 2)
+            EventManager.ON_CHANGEBGM?.Invoke(GameBGMState.Cheerful);
+        else if (score >= 3 && score <=4)
+            EventManager.ON_CHANGEBGM?.Invoke(GameBGMState.Eerie);
+        else if (score >= 5)
+            EventManager.ON_CHANGEBGM?.Invoke(GameBGMState.Massacre);
     }
 }
