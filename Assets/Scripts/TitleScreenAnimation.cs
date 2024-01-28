@@ -9,7 +9,7 @@ public class TitleScreenAnimation : MonoBehaviour
     private void Awake()
     {
         animator = GetComponent<Animator>();
-
+        Cursor.lockState = CursorLockMode.None;
     }
 
     private void Update()
