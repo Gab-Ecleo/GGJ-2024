@@ -15,25 +15,22 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        
         EventManager.ON_GAMESTART?.Invoke();
-        Time.timeScale = 1;
+        Debug.Log("GameStarted");
     }
 
-    public void Play()
-    {
-        SceneManager.LoadScene(1);
-    }
-
-    public void Exit()
-    {
-        Application.Quit();
-    }
+    //public void Play()
+    //{
+    //    SceneManager.LoadScene(1);
+    //}
 
     private void GameOver()
     {
         Debug.Log("Game Over");
         gameOverScene.SetActive(true);
         playerHUD.SetActive(false);
+        StartCoroutine("ShortTimeDelay");
     }
 
     private void OnDestroy()
@@ -44,4 +41,11 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene(0);
     }
+
+    IEnumerator ShortTimeDelay()
+    {
+        yield return new WaitForSeconds(4);
+        SceneManager.LoadScene(0);
+    }
+
 }

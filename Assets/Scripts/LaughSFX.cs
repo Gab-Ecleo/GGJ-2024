@@ -13,6 +13,7 @@ public class LaughSFX : MonoBehaviour
     private void Awake()
     {
         source = GetComponent<AudioSource>();
+        EventManager.ON_GAMEEND += MuteAudio;
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -21,5 +22,15 @@ public class LaughSFX : MonoBehaviour
         if (!collision.gameObject.CompareTag("Player")) return;
         EventManager.ON_STEREOSFX?.Invoke(clip, source);
         hasPlayed = true;
+    }
+
+    private void MuteAudio()
+    {
+        source.Stop();
+    }
+
+    private void OnDestroy()
+    {
+        EventManager.ON_GAMEEND -= MuteAudio;
     }
 }

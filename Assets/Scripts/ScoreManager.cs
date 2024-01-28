@@ -21,6 +21,10 @@ public class ScoreManager : MonoBehaviour
     {
         EventManager.ON_LAUGH += AddScore;
         EventManager.ON_GAMEEND += WinCondition;
+    }
+
+    private void Start()
+    {
         score = 0;
     }
 
@@ -35,7 +39,7 @@ public class ScoreManager : MonoBehaviour
 
     private void WinCondition()
     {
-        if(score <= 1 && score >=2)
+        if(score <= 2 && score >=1)
         {
             peacefulEnding.SetActive(true);
             playerHUD.SetActive(false);
@@ -76,7 +80,7 @@ public class ScoreManager : MonoBehaviour
 
     IEnumerator ShortTimeDelay()
     {
-        yield return new WaitForSeconds(7);
+        yield return new WaitForSeconds(4);
         SceneManager.LoadScene(0);
     }
 
