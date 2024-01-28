@@ -37156,6 +37156,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1859122441635700539, guid: 2321b5b6ea13f9b4791c849b81204000,
         type: 3}
+      propertyPath: clownCry
+      value: 
+      objectReference: {fileID: 8300000, guid: 81cf06d72a2109c46bb1065b901f7ca5, type: 3}
+    - target: {fileID: 1859122441635700539, guid: 2321b5b6ea13f9b4791c849b81204000,
+        type: 3}
       propertyPath: playerHUD
       value: 
       objectReference: {fileID: 158368926}
@@ -38687,7 +38692,7 @@ PrefabInstance:
     - target: {fileID: 4732364387894245713, guid: 441ce49946b93384ca44ac48872e4aa1,
         type: 3}
       propertyPath: clockTime
-      value: 80
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5107317611512112797, guid: 441ce49946b93384ca44ac48872e4aa1,
         type: 3}

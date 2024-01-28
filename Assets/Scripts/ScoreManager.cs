@@ -14,6 +14,8 @@ public class ScoreManager : MonoBehaviour
     [SerializeField] private GameObject hintingEnding;
     [SerializeField] private GameObject realEnding;
     [SerializeField] private GameObject playerHUD;
+    [SerializeField] private AudioClip clownCry;
+    [SerializeField] private AudioClip endingBGM;
 
     private void Awake()
     {
@@ -50,8 +52,20 @@ public class ScoreManager : MonoBehaviour
         {
             realEnding.SetActive(true);
             playerHUD.SetActive(false);
+
+            AudioManager._instance.StopAudio();
+            EventManager.ON_MONOSFX?.Invoke(clownCry);
+            StartCoroutine("TimeDelay");
+            
             Debug.Log("Killer Clown on the lose.");
         }
+    }
+
+    IEnumerator TimeDelay()
+    {
+        yield return new WaitForSeconds(3);
+        Debug.Log("Playing ending BGM");
+        EventManager.ON_PLAYBGM?.Invoke(endingBGM);
     }
 
     private void OnDestroy()
@@ -63,5 +77,8 @@ public class ScoreManager : MonoBehaviour
     private void Update()
     {
         Debug.Log(score);
+
+        if (Input.GetKeyDown(KeyCode.Space))
+            score = 20;
     }
 }
