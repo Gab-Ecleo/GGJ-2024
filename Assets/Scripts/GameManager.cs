@@ -6,11 +6,11 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     private bool gameIsPaused;
-
+    [SerializeField] private GameObject gameOverScene;
+    [SerializeField] private GameObject playerHUD;
     private void Awake()
     {
-        EventManager.ON_GAMEEND += GameOver;
-        
+        EventManager.ON_GAMEOVER += GameOver;
     }
 
     private void Start()
@@ -30,11 +30,17 @@ public class GameManager : MonoBehaviour
 
     private void GameOver()
     {
-        //Check Happiness Meter
+        Debug.Log("Game Over");
+        gameOverScene.SetActive(true);
+        playerHUD.SetActive(false);
     }
 
     private void OnDestroy()
     {
-        EventManager.ON_GAMEEND -= GameOver;
+        EventManager.ON_GAMEOVER -= GameOver;
+    }
+    public void BackToMainMenu()
+    {
+        SceneManager.LoadScene(0);
     }
 }
