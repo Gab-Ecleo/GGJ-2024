@@ -15,11 +15,12 @@ public class GlobalVolumePostProcessor : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            postProcessor.profile = _profile[Random.Range(0, _profile.Length)];
-            Debug.Log("clicked");
-        }
+        if (ScoreManager._score >= 0 && ScoreManager._score <= 2)
+            postProcessor.profile = _profile[0];
+        else if (ScoreManager._score >= 3 && ScoreManager._score <= 4)
+            postProcessor.profile = _profile[1];
+        else if (ScoreManager._score >= 5)
+            postProcessor.profile = _profile[2];
     }
 
 }

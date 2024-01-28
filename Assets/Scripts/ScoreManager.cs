@@ -21,6 +21,10 @@ public class ScoreManager : MonoBehaviour
     {
         EventManager.ON_LAUGH += AddScore;
         EventManager.ON_GAMEEND += WinCondition;
+    }
+
+    private void Start()
+    {
         score = 0;
     }
 
@@ -35,10 +39,12 @@ public class ScoreManager : MonoBehaviour
 
     private void WinCondition()
     {
-        if(score <= 1 && score >=2)
+        if(score <= 2 && score >=1)
         {
             peacefulEnding.SetActive(true);
             playerHUD.SetActive(false);
+            StartCoroutine("ShortTimeDelay");
+
             // ADD transtition to Credits scene
             Debug.Log("You didn't made any people laugh.");
         }
@@ -46,6 +52,8 @@ public class ScoreManager : MonoBehaviour
         {
             hintingEnding.SetActive(true);
             playerHUD.SetActive(false);
+            StartCoroutine("ShortTimeDelay");
+
             // ADD transtition to Credits scene
             Debug.Log("You made most people laugh.");
         }
@@ -56,17 +64,30 @@ public class ScoreManager : MonoBehaviour
 
             AudioManager._instance.StopAudio();
             EventManager.ON_MONOSFX?.Invoke(clownCry);
-            StartCoroutine("TimeDelay");
+            StartCoroutine("PlayCredits");
             
             Debug.Log("Killer Clown on the lose.");
         }
     }
 
-    IEnumerator TimeDelay()
+    IEnumerator PlayCredits()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(10);
         Debug.Log("Playing ending BGM");
         EventManager.ON_PLAYBGM?.Invoke(endingBGM);
+        StartCoroutine("LongTimeDelay");    
+    }
+
+    IEnumerator ShortTimeDelay()
+    {
+        yield return new WaitForSeconds(4);
+        SceneManager.LoadScene(0);
+    }
+
+    IEnumerator LongTimeDelay()
+    {
+        yield return new WaitForSeconds(10);
+        SceneManager.LoadScene(2);
     }
 
     private void OnDestroy()

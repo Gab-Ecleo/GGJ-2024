@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public enum GameBGMState
 {
@@ -30,7 +31,7 @@ public class AudioManager : MonoBehaviour
         EventManager.ON_PLAYBGM += PlayBGM;
         EventManager.ON_CHANGEBGM += SwapGameBGM;
         EventManager.ON_STOPAUDIO += StopAudio;
-        EventManager.ON_GAMESTART += StartGameBGM;
+        //  EventManager.ON_GAMESTART += StartGameBGM;
     }
 
     private void PlaySFX(AudioClip clip)
@@ -50,10 +51,13 @@ public class AudioManager : MonoBehaviour
         SFXSource.Play();
     }
 
-    private void StartGameBGM()
+    private void Start()
     {
-        foreach (var bgm in GameBGMS) { bgm.Play(); }
-        SwapGameBGM(GameBGMState.Cheerful);
+        if (SceneManager.GetActiveScene().buildIndex == 1)
+        {
+            foreach (var bgm in GameBGMS) { bgm.Play(); }
+            SwapGameBGM(GameBGMState.Cheerful);
+        }
     }
 
     private void SwapGameBGM(GameBGMState state)
