@@ -1,4 +1,6 @@
+using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PauseScript : MonoBehaviour
 {
@@ -18,21 +20,30 @@ public class PauseScript : MonoBehaviour
 
     private void PauseGame()
     {
-        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.lockState = CursorLockMode.None;
         animator.SetTrigger("PauseGame");
-        Time.timeScale = 0;
+        //Time.timeScale = 0;
     }
 
     public void ResumeGame()
     {
-        Cursor.lockState = CursorLockMode.None;
+        Cursor.lockState = CursorLockMode.Locked;
         animator.SetTrigger("ResumeGame");
         Time.timeScale = 1;
     }
 
     public void ReturnToMenu()
     {
+        StartCoroutine(LoadScene());
+    }
+
+    private IEnumerator LoadScene()
+    {
+        Cursor.lockState = CursorLockMode.None;
         animator.SetTrigger("ReturnToMenu");
         Time.timeScale = 1;
+        yield return new WaitForSeconds(2.5f);
+        SceneManager.LoadScene(0);
+        yield return null;
     }
 }
