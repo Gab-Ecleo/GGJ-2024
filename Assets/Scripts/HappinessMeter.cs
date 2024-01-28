@@ -39,7 +39,11 @@ public class HappinessMeter : MonoBehaviour
         if (meter > 0) return;
         meter = 0;
         meterStart = false;
-        EventManager.ON_GAMEEND?.Invoke();
+
+        if (ScoreManager._score == 0)
+            EventManager.ON_GAMEOVER?.Invoke();
+        else if (ScoreManager._score > 0)
+            EventManager.ON_GAMEEND?.Invoke();
     }
 
     private void StartMeter()

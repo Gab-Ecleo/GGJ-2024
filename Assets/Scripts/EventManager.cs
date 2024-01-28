@@ -9,6 +9,7 @@ public class EventManager : MonoBehaviour
 
     public static Action ON_GAMESTART;
     public static Action ON_GAMEEND;
+    public static Action ON_GAMEOVER;
 
     public static Action ON_DIFFICULTYINCREASE;
 
