@@ -512,17 +512,22 @@ PrefabInstance:
     - target: {fileID: 5107317611512112797, guid: 441ce49946b93384ca44ac48872e4aa1,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5107317611512112797, guid: 441ce49946b93384ca44ac48872e4aa1,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5696041387343730021, guid: 441ce49946b93384ca44ac48872e4aa1,
         type: 3}
       propertyPath: m_Name
       value: Game UI
+      objectReference: {fileID: 0}
+    - target: {fileID: 5696041387343730021, guid: 441ce49946b93384ca44ac48872e4aa1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7019369787875200532, guid: 441ce49946b93384ca44ac48872e4aa1,
         type: 3}
@@ -1035,6 +1040,6 @@ SceneRoots:
   - {fileID: 6702893497580173392}
   - {fileID: 1792689275904322407}
   - {fileID: 2768329524239181808}
-  - {fileID: 1761437725375561380}
   - {fileID: 179867400}
   - {fileID: 2104417527}
+  - {fileID: 1761437725375561380}
