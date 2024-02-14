@@ -24,7 +24,8 @@ public class ClownLaughSFX : MonoBehaviour
     private IEnumerator LaughDelay()
     {
         yield return new WaitForSeconds(laughDelay);
-        EventManager.ON_MONOSFX(clownDialogs[index]);
+        //EventManager.ON_MONOSFX(clownDialogs[index]);
+        AudioManager.Instance.PlaySFX(clownDialogs[index]);
     }
 
     private void OnDestroy()

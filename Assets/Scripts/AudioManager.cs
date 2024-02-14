@@ -11,8 +11,8 @@ public enum GameBGMState
 
 public class AudioManager : MonoBehaviour
 {
-    private static AudioManager Instance;
-    public static AudioManager _instance => Instance;
+    private static AudioManager _instance;
+    public static AudioManager Instance => _instance;
 
     [SerializeField] private AudioSource SFXSource;
     [SerializeField] private AudioSource BGMSource;
@@ -23,32 +23,56 @@ public class AudioManager : MonoBehaviour
 
     private void Awake()
     {
-        if (Instance == null) Instance = this;
-        else if (Instance != this) Destroy(gameObject);
+        if (_instance == null) _instance = this;
+        else if (_instance != this) Destroy(gameObject);
 
-        EventManager.ON_MONOSFX += PlaySFX;
-        EventManager.ON_STEREOSFX += PlaySFX;
-        EventManager.ON_PLAYBGM += PlayBGM;
+        //EventManager.ON_MONOSFX += PlaySFX;
+        //EventManager.ON_MONOSFX_01 += PlaySFX;
+        //EventManager.ON_STEREOSFX += PlaySFX;
+        //EventManager.ON_PLAYBGM += PlayBGM;
         EventManager.ON_CHANGEBGM += SwapGameBGM;
-        EventManager.ON_STOPAUDIO += StopAudio;
+        //EventManager.ON_STOPAUDIO += StopAudio;
         //  EventManager.ON_GAMESTART += StartGameBGM;
     }
 
-    private void PlaySFX(AudioClip clip)
+    public void PlaySFX(AudioClip clip)
     {
+        SFXSource.volume = 1f;
         SFXSource.PlayOneShot(clip);
     }
 
-    private void PlaySFX(AudioClip clip, AudioSource source)
+    public void PlaySFX(AudioClip clip, float volume)
     {
+        SFXSource.volume = volume;
+        SFXSource.PlayOneShot(clip);
+    }
+
+    public void PlaySFX(AudioClip clip, AudioSource source)
+    {
+        SFXSource.volume = 1f;
         source.PlayOneShot(clip);
     }
 
-    private void PlayBGM(AudioClip clip)
+    public void PlaySFX(AudioClip clip, AudioSource source, float volume)
     {
-        SFXSource.clip = clip;
-        SFXSource.loop = true;
-        SFXSource.Play();
+        source.volume = volume;
+        source.PlayOneShot(clip);
+    }
+
+    public void PlayBGM(AudioClip clip)
+    {
+        BGMSource.volume = 1f;
+        BGMSource.clip = clip;
+        BGMSource.loop = true;
+        BGMSource.Play();
+    }
+
+    public void PlayBGM(AudioClip clip, float volume)
+    {
+        BGMSource.volume = volume;
+        BGMSource.clip = clip;
+        BGMSource.loop = true;
+        BGMSource.Play();
     }
 
     private void Start()
@@ -60,7 +84,7 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    private void SwapGameBGM(GameBGMState state)
+    public void SwapGameBGM(GameBGMState state)
     {
         foreach(var bgm in GameBGMS) { bgm.mute = true; }
         GameBGMS[(int)state].mute = false;
@@ -75,10 +99,11 @@ public class AudioManager : MonoBehaviour
 
     private void OnDestroy()
     {
-        EventManager.ON_MONOSFX -= PlaySFX;
-        EventManager.ON_STEREOSFX -= PlaySFX;
-        EventManager.ON_PLAYBGM -= PlayBGM;
+        //EventManager.ON_MONOSFX -= PlaySFX;
+        //EventManager.ON_MONOSFX_01 -= PlaySFX;
+        //EventManager.ON_STEREOSFX -= PlaySFX;
+        //EventManager.ON_PLAYBGM -= PlayBGM;
         EventManager.ON_CHANGEBGM -= SwapGameBGM;
-        EventManager.ON_STOPAUDIO -= StopAudio;
+        //EventManager.ON_STOPAUDIO -= StopAudio;
     }
 }
