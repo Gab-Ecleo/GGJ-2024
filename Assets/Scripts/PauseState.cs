@@ -10,6 +10,8 @@ public class PauseState : MonoBehaviour
 
     private void Awake()
     {
+        paused = false;
+
         EventManager.ON_PAUSE += Pause;
         EventManager.ON_RESUME += Resume;
     }
