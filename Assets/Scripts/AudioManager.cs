@@ -19,20 +19,12 @@ public class AudioManager : MonoBehaviour
 
     [SerializeField] private AudioSource[] GameBGMS;
 
-    private int temp = 0;
-
     private void Awake()
     {
         if (_instance == null) _instance = this;
         else if (_instance != this) Destroy(gameObject);
 
-        //EventManager.ON_MONOSFX += PlaySFX;
-        //EventManager.ON_MONOSFX_01 += PlaySFX;
-        //EventManager.ON_STEREOSFX += PlaySFX;
-        //EventManager.ON_PLAYBGM += PlayBGM;
         EventManager.ON_CHANGEBGM += SwapGameBGM;
-        //EventManager.ON_STOPAUDIO += StopAudio;
-        //  EventManager.ON_GAMESTART += StartGameBGM;
     }
 
     public void PlaySFX(AudioClip clip)
@@ -99,11 +91,6 @@ public class AudioManager : MonoBehaviour
 
     private void OnDestroy()
     {
-        //EventManager.ON_MONOSFX -= PlaySFX;
-        //EventManager.ON_MONOSFX_01 -= PlaySFX;
-        //EventManager.ON_STEREOSFX -= PlaySFX;
-        //EventManager.ON_PLAYBGM -= PlayBGM;
         EventManager.ON_CHANGEBGM -= SwapGameBGM;
-        //EventManager.ON_STOPAUDIO -= StopAudio;
     }
 }
