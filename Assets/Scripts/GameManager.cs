@@ -30,6 +30,7 @@ public class GameManager : MonoBehaviour
         LogManager.Print("GameStarted");
         gameOverScene.SetActive(true);
         playerHUD.SetActive(false);
+        EventManager.ON_PAUSE?.Invoke();
         //StartCoroutine("ShortTimeDelay");
     }
 
