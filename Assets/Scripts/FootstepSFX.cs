@@ -25,7 +25,8 @@ public class FootstepSFX : MonoBehaviour
     private IEnumerator WalkTimer()
     {
         soundSwitch = !soundSwitch;
-        EventManager.ON_MONOSFX?.Invoke(clip[soundSwitch ? 0 : 1]);
+        //EventManager.ON_MONOSFX?.Invoke(clip[soundSwitch ? 0 : 1]);
+        AudioManager.Instance.PlaySFX(clip[soundSwitch ? 0 : 1]);
         yield return new WaitForSeconds(walkFrequency);
         onCooldown = false;
     }

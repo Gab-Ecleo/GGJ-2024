@@ -19,12 +19,7 @@ public class EventManager : MonoBehaviour
 
     public static Action<Transform[]> SET_ESCAPEROUTE;
 
-    public static Action<float> SET_VOLUME;
-    public static Action<AudioClip> ON_MONOSFX;
-    public static Action<AudioClip, AudioSource> ON_STEREOSFX;
-    public static Action<AudioClip> ON_PLAYBGM;
     public static Action<GameBGMState> ON_CHANGEBGM;
-    public static Action ON_STOPAUDIO;
 
     public static Action<Animator> ON_NPCSHOCK;
     public static Action<Animator> ON_NPCRUNNING;

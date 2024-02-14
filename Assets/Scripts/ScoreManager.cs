@@ -56,8 +56,9 @@ public class ScoreManager : MonoBehaviour
             realEnding.SetActive(true);
             playerHUD.SetActive(false);
 
-            AudioManager._instance.StopAudio();
-            EventManager.ON_MONOSFX?.Invoke(clownCry);
+            AudioManager.Instance.StopAudio();
+            //EventManager.ON_MONOSFX?.Invoke(clownCry);
+            AudioManager.Instance.PlaySFX(clownCry);
             StartCoroutine("PlayCredits");
         }
     }
@@ -66,7 +67,8 @@ public class ScoreManager : MonoBehaviour
     {
         yield return new WaitForSeconds(10);
         LogManager.Print("Playing ending BGM");
-        EventManager.ON_PLAYBGM?.Invoke(endingBGM);
+        //EventManager.ON_PLAYBGM?.Invoke(endingBGM);
+        AudioManager.Instance.PlayBGM(endingBGM);
         StartCoroutine("LongTimeDelay");    
     }
 

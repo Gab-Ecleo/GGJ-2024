@@ -58,7 +58,8 @@ public class Pathfinding : MonoBehaviour
     private IEnumerator ShockDelay()
     {
         EventManager.ON_NPCSHOCK?.Invoke(animator);
-        EventManager.ON_STEREOSFX?.Invoke(scaredClip, source);
+        //EventManager.ON_STEREOSFX?.Invoke(scaredClip, source);
+        AudioManager.Instance.PlaySFX(scaredClip, source);
         yield return new WaitForSeconds(shockDelay);
         if (!agent.enabled) yield break;
         agent.SetDestination(direction);

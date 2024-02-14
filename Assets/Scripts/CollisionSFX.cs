@@ -20,7 +20,8 @@ public class CollisionSFX : MonoBehaviour
         if (hasPlayed) return;
 
         if (!collision.gameObject.CompareTag("Player")) return;
-        EventManager.ON_STEREOSFX?.Invoke(clip, source);
+        //EventManager.ON_STEREOSFX?.Invoke(clip, source);
+        AudioManager.Instance.PlaySFX(clip, source);
         hasPlayed = true;
     }
 
@@ -29,7 +30,8 @@ public class CollisionSFX : MonoBehaviour
         if (hasPlayed) return;
 
         if(!other.CompareTag("Player")) return;
-        EventManager.ON_STEREOSFX?.Invoke(clip, source);
+        //EventManager.ON_STEREOSFX?.Invoke(clip, source);
+        AudioManager.Instance.PlaySFX(clip, source);
         hasPlayed = true;
     }
 }
