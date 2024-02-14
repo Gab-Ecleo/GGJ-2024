@@ -41,7 +41,7 @@ public class AudioManager : MonoBehaviour
 
     public void PlaySFX(AudioClip clip, AudioSource source)
     {
-        SFXSource.volume = 1f;
+        source.volume = 1f;
         source.PlayOneShot(clip);
     }
 

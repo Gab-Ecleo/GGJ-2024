@@ -55,7 +55,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93c264e12cf6a6641819b82f2b01e132, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clip: {fileID: 8300000, guid: 6f68f8f77b74a7f45a6a457abd256570, type: 3}
+  clip: {fileID: 8300000, guid: a83a60b2ebe1a4b408a69ea130b9e6c7, type: 3}
 --- !u!114 &1069022914250201441
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -108,7 +108,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   detectionRange: 5
   shockDelay: 0.8
-  scaredClip: {fileID: 8300000, guid: ae838efc88da97144bdb1266cd0aa837, type: 3}
+  scaredClip: {fileID: 8300000, guid: 5c2300fdd33ac9749b3905ef7ddc3cd8, type: 3}
 --- !u!114 &-4340523512443884020
 MonoBehaviour:
   m_ObjectHideFlags: 0

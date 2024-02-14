@@ -227,7 +227,7 @@ MonoBehaviour:
   clownDialogs:
   - {fileID: 8300000, guid: fa345d1a4dcf5e1468dc781d0ced0956, type: 3}
   - {fileID: 8300000, guid: 4438e34e3e1b7ec4eb8b3bcd86849b17, type: 3}
-  - {fileID: 8300000, guid: 6984c0ab043b6904cb35586c2abdf4d8, type: 3}
+  - {fileID: 8300000, guid: 2d13e4892932d354399ea2f37e49ba30, type: 3}
   - {fileID: 8300000, guid: 47f411a2cf12039458962e9e9ce74e2d, type: 3}
   laughDelay: 1
 --- !u!114 &4698153252051474037
@@ -243,8 +243,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clip:
-  - {fileID: 8300000, guid: 9c9cad9ea508996449c0dfb3c3629228, type: 3}
-  - {fileID: 8300000, guid: 3b03698db7a348d41bb8923902770f58, type: 3}
+  - {fileID: 8300000, guid: b0930cae2e99e7144a8b189990bfbc4d, type: 3}
+  - {fileID: 8300000, guid: b0930cae2e99e7144a8b189990bfbc4d, type: 3}
   walkFrequency: 0.5
 --- !u!114 &4503958971490692131
 MonoBehaviour:
