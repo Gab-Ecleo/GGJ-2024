@@ -222,7 +222,7 @@ GameObject:
   - component: {fileID: 6825547281692530259}
   - component: {fileID: 8351378632859130178}
   m_Layer: 5
-  m_Name: Panel (1)
+  m_Name: Accent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -373,14 +373,13 @@ GameObject:
   - component: {fileID: 3519789807655226859}
   - component: {fileID: 5110451716207783218}
   - component: {fileID: 326146939364596295}
-  - component: {fileID: 2021960448525057707}
   m_Layer: 5
   m_Name: EndingScreen(hinting)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &948092210414037190
 RectTransform:
   m_ObjectHideFlags: 0
@@ -489,19 +488,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &2021960448525057707
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5461732165552976944}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b26e3eecffe505f41bd22c1f763a4f43, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  anim: {fileID: 0}
 --- !u!1 &7768023641478126460
 GameObject:
   m_ObjectHideFlags: 0

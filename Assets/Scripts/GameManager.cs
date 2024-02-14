@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour
         LogManager.Print("GameStarted");
         gameOverScene.SetActive(true);
         playerHUD.SetActive(false);
-        StartCoroutine("ShortTimeDelay");
+        //StartCoroutine("ShortTimeDelay");
     }
 
     private void OnDestroy()

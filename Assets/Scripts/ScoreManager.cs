@@ -43,13 +43,13 @@ public class ScoreManager : MonoBehaviour
         {
             peacefulEnding.SetActive(true);
             playerHUD.SetActive(false);
-            StartCoroutine("ShortTimeDelay");
+            //StartCoroutine("ShortTimeDelay");
         }
         else if(score <= 4 && score >= 3)
         {
             hintingEnding.SetActive(true);
             playerHUD.SetActive(false);
-            StartCoroutine("ShortTimeDelay");
+            //StartCoroutine("ShortTimeDelay");
         }
         else if(score >= 5)
         {
@@ -69,7 +69,7 @@ public class ScoreManager : MonoBehaviour
         LogManager.Print("Playing ending BGM");
         //EventManager.ON_PLAYBGM?.Invoke(endingBGM);
         AudioManager.Instance.PlayBGM(endingBGM);
-        StartCoroutine("LongTimeDelay");    
+        //StartCoroutine("LongTimeDelay");    
     }
 
     IEnumerator ShortTimeDelay()
