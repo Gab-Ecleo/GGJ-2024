@@ -46,9 +46,8 @@ public class PauseScript : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.None;
         animator.SetTrigger("ReturnToMenu");
-        Time.timeScale = 1;
-        yield return new WaitForSeconds(2.5f);
-        SceneManager.LoadScene(0);
+        //yield return new WaitForSeconds(2.5f);
+        //SceneManager.LoadScene(0);
         yield return null;
     }
 }
