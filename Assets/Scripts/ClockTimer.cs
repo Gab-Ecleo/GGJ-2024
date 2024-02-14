@@ -34,7 +34,6 @@ public class ClockTimer : MonoBehaviour
         timer = 0;
         timerStart = false;
         EventManager.ON_GAMEEND?.Invoke();
-        Debug.Log("time ended");
     }
 
     private void StartClock()
