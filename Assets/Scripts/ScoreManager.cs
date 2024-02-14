@@ -44,18 +44,12 @@ public class ScoreManager : MonoBehaviour
             peacefulEnding.SetActive(true);
             playerHUD.SetActive(false);
             StartCoroutine("ShortTimeDelay");
-
-            // ADD transtition to Credits scene
-            Debug.Log("You didn't made any people laugh.");
         }
         else if(score <= 4 && score >= 3)
         {
             hintingEnding.SetActive(true);
             playerHUD.SetActive(false);
             StartCoroutine("ShortTimeDelay");
-
-            // ADD transtition to Credits scene
-            Debug.Log("You made most people laugh.");
         }
         else if(score >= 5)
         {
@@ -65,15 +59,13 @@ public class ScoreManager : MonoBehaviour
             AudioManager._instance.StopAudio();
             EventManager.ON_MONOSFX?.Invoke(clownCry);
             StartCoroutine("PlayCredits");
-            
-            Debug.Log("Killer Clown on the lose.");
         }
     }
 
     IEnumerator PlayCredits()
     {
         yield return new WaitForSeconds(10);
-        Debug.Log("Playing ending BGM");
+        LogManager.Print("Playing ending BGM");
         EventManager.ON_PLAYBGM?.Invoke(endingBGM);
         StartCoroutine("LongTimeDelay");    
     }
@@ -98,8 +90,6 @@ public class ScoreManager : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(score);
-
         if (score >= 1 && score <= 2)
             EventManager.ON_CHANGEBGM?.Invoke(GameBGMState.Cheerful);
         else if (score >= 3 && score <=4)
