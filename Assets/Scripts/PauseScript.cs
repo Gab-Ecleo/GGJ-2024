@@ -12,6 +12,15 @@ public class PauseScript : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         Cursor.lockState = CursorLockMode.Locked;
+
+        EventManager.ON_GAMEOVER += PauseForever;
+        EventManager.ON_GAMEEND += PauseForever;
+    }
+
+    private void OnDestroy()
+    {
+        EventManager.ON_GAMEOVER -= PauseForever;
+        EventManager.ON_GAMEEND -= PauseForever;
     }
 
     private void Update()
@@ -42,6 +51,7 @@ public class PauseScript : MonoBehaviour
 
     public void PauseForever()
     {
+        Debug.Log("Paused Forever!");
         gameOver = true;
         Cursor.lockState = CursorLockMode.Locked;
         EventManager.ON_PAUSE?.Invoke();
