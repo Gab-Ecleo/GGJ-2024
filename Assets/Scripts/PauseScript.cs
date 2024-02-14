@@ -6,6 +6,8 @@ public class PauseScript : MonoBehaviour
 {
     private Animator animator;
 
+    private bool gameOver = false;
+
     private void Awake()
     {
         animator = GetComponent<Animator>();
@@ -14,6 +16,7 @@ public class PauseScript : MonoBehaviour
 
     private void Update()
     {
+        if (gameOver) return;
         if (!Input.GetButtonDown("Cancel")) return;
         if (PauseState.isPaused) ResumeGame();
         else PauseGame();
@@ -35,6 +38,13 @@ public class PauseScript : MonoBehaviour
         animator.SetTrigger("ResumeGame");
         //Time.timeScale = 1;
         EventManager.ON_RESUME?.Invoke();
+    }
+
+    public void PauseForever()
+    {
+        gameOver = true;
+        Cursor.lockState = CursorLockMode.Locked;
+        EventManager.ON_PAUSE?.Invoke();
     }
 
     public void ReturnToMenu()
