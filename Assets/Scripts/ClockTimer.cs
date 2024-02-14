@@ -17,6 +17,7 @@ public class ClockTimer : MonoBehaviour
 
     private void Update()
     {
+        if (PauseState.isPaused) return;
         if (!timerStart) return;
         TimerCountdown();
         TimerEnder();

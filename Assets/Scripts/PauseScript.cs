@@ -14,8 +14,11 @@ public class PauseScript : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && Time.timeScale > 0) PauseGame();
-        else if (Input.GetKeyDown(KeyCode.Escape) && Time.timeScale < 1) ResumeGame();
+        if (!Input.GetButtonDown("Cancel")) return;
+        if (PauseState.isPaused) ResumeGame();
+        else PauseGame();
+        //if (Input.GetKeyDown(KeyCode.Escape) && Time.timeScale > 0) PauseGame();
+        //else if (Input.GetKeyDown(KeyCode.Escape) && Time.timeScale < 1) ResumeGame();
     }
 
     private void PauseGame()
@@ -23,13 +26,15 @@ public class PauseScript : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         animator.SetTrigger("PauseGame");
         //Time.timeScale = 0;
+        EventManager.ON_PAUSE?.Invoke();
     }
 
     public void ResumeGame()
     {
         Cursor.lockState = CursorLockMode.Locked;
         animator.SetTrigger("ResumeGame");
-        Time.timeScale = 1;
+        //Time.timeScale = 1;
+        EventManager.ON_RESUME?.Invoke();
     }
 
     public void ReturnToMenu()

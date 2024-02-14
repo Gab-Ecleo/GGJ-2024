@@ -23,6 +23,7 @@ public class HappinessMeter : MonoBehaviour
 
     private void Update()
     {
+        if (PauseState.isPaused) return;
         if (!meterStart) return;
         DecreaseMeter();
         MeterChecker();
