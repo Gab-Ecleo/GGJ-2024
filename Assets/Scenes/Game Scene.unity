@@ -75432,13 +75432,28 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 646001527662326119, guid: 9873aba5c4662a84e80f5efca8169bec,
         type: 3}
+      propertyPath: m_Volume
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 646001527662326119, guid: 9873aba5c4662a84e80f5efca8169bec,
+        type: 3}
       propertyPath: m_PlayOnAwake
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1242429139638285246, guid: 9873aba5c4662a84e80f5efca8169bec,
         type: 3}
+      propertyPath: m_Volume
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1242429139638285246, guid: 9873aba5c4662a84e80f5efca8169bec,
+        type: 3}
       propertyPath: m_PlayOnAwake
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2928170331647380433, guid: 9873aba5c4662a84e80f5efca8169bec,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 2928170331647380433, guid: 9873aba5c4662a84e80f5efca8169bec,
         type: 3}
@@ -75504,6 +75519,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6900480223580512415, guid: 9873aba5c4662a84e80f5efca8169bec,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
