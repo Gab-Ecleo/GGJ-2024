@@ -44,6 +44,7 @@ public class Pathfinding : MonoBehaviour
 
     private void Update()
     {
+        if (PauseState.isPaused) return;
         if (!isRunning)
         {
             if (Vector3.Distance(transform.position, player.position) > detectionRange) return;

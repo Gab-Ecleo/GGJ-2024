@@ -355,6 +355,7 @@ GameObject:
   - component: {fileID: 7988798165491111300}
   - component: {fileID: 3506404653577237950}
   - component: {fileID: 8717691806173327108}
+  - component: {fileID: 6576234575504686137}
   - component: {fileID: 4361146481041818085}
   m_Layer: 5
   m_Name: PauseScreen
@@ -457,6 +458,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dfb85c08bf1db594588cf8c1fe912cd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6576234575504686137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5596191282890135228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eaaacf9df5831d547b8fe4c1a25047f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!95 &4361146481041818085

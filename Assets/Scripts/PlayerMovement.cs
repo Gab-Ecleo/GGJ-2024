@@ -21,11 +21,13 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
+        if (PauseState.isPaused) return;
         UpdateInput();
     }
 
     private void FixedUpdate()
     {
+        if (PauseState.isPaused) return;
         RotatePlayer();
         MovePlayer();
         HeadMovement();
