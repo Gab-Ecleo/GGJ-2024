@@ -7,6 +7,7 @@ public class Pathfinding : MonoBehaviour
     #region Variables
 
     [SerializeField] private float detectionRange;
+    [SerializeField] private float shockDelay = 1.5f;
     [SerializeField] private AudioClip scaredClip;
     private Transform[] escapeRoute;
     private NavMeshAgent agent;
@@ -58,7 +59,7 @@ public class Pathfinding : MonoBehaviour
     {
         EventManager.ON_NPCSHOCK?.Invoke(animator);
         EventManager.ON_STEREOSFX?.Invoke(scaredClip, source);
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(shockDelay);
         if (!agent.enabled) yield break;
         agent.SetDestination(direction);
         EventManager.ON_NPCRUNNING?.Invoke(animator);
