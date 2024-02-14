@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
     {
         
         EventManager.ON_GAMESTART?.Invoke();
-        Debug.Log("GameStarted");
+        LogManager.Print("GameStarted");
     }
 
     //public void Play()
@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
 
     private void GameOver()
     {
-        Debug.Log("Game Over");
+        LogManager.Print("GameStarted");
         gameOverScene.SetActive(true);
         playerHUD.SetActive(false);
         StartCoroutine("ShortTimeDelay");
