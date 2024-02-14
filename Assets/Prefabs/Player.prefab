@@ -216,6 +216,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 4438e34e3e1b7ec4eb8b3bcd86849b17, type: 3}
   - {fileID: 8300000, guid: 6984c0ab043b6904cb35586c2abdf4d8, type: 3}
   - {fileID: 8300000, guid: 47f411a2cf12039458962e9e9ce74e2d, type: 3}
+  laughDelay: 1
 --- !u!114 &4698153252051474037
 MonoBehaviour:
   m_ObjectHideFlags: 0
