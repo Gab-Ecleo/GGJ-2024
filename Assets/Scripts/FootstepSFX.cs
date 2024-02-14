@@ -26,7 +26,7 @@ public class FootstepSFX : MonoBehaviour
     {
         soundSwitch = !soundSwitch;
         //EventManager.ON_MONOSFX?.Invoke(clip[soundSwitch ? 0 : 1]);
-        AudioManager.Instance.PlaySFX(clip[soundSwitch ? 0 : 1]);
+        AudioManager.Instance.PlaySFX(clip[soundSwitch ? 0 : 1], Random.Range(0.2f, 0.5f));
         yield return new WaitForSeconds(walkFrequency);
         onCooldown = false;
     }

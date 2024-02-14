@@ -23,11 +23,13 @@ public class AgentPauser : MonoBehaviour
 
     private void PauseAgent()
     {
+        if (!agent.enabled) return;
         agent.isStopped = true;
     }
 
     private void ResumeAgent()
     {
+        if (!agent.enabled) return;
         agent.isStopped = false;
     }
 }
