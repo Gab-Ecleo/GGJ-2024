@@ -7930,7 +7930,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 7815528303385401320, guid: 06e55862c2078964e9b500f67132575e,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 712556082}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 06e55862c2078964e9b500f67132575e, type: 3}
 --- !u!20 &210349747 stripped
@@ -20335,6 +20339,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 69c3b716fe82e124290185d387a3593e, type: 3}
+--- !u!4 &553479823 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7815528303385401320, guid: 06e55862c2078964e9b500f67132575e,
+    type: 3}
+  m_PrefabInstance: {fileID: 210349746}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &553575764
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26692,6 +26702,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 69c3b716fe82e124290185d387a3593e, type: 3}
+--- !u!4 &712556082 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5704546687912975655, guid: 9873aba5c4662a84e80f5efca8169bec,
+    type: 3}
+  m_PrefabInstance: {fileID: 1027029378336061942}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &715692289
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -75428,7 +75444,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 553479823}
     m_Modifications:
     - target: {fileID: 646001527662326119, guid: 9873aba5c4662a84e80f5efca8169bec,
         type: 3}
@@ -75440,6 +75456,11 @@ PrefabInstance:
       propertyPath: m_PlayOnAwake
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 646001527662326119, guid: 9873aba5c4662a84e80f5efca8169bec,
+        type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1242429139638285246, guid: 9873aba5c4662a84e80f5efca8169bec,
         type: 3}
       propertyPath: m_Volume
@@ -75450,6 +75471,11 @@ PrefabInstance:
       propertyPath: m_PlayOnAwake
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1242429139638285246, guid: 9873aba5c4662a84e80f5efca8169bec,
+        type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2928170331647380433, guid: 9873aba5c4662a84e80f5efca8169bec,
         type: 3}
       propertyPath: m_Volume
@@ -75459,11 +75485,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_PlayOnAwake
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2928170331647380433, guid: 9873aba5c4662a84e80f5efca8169bec,
+        type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5343802019415841755, guid: 9873aba5c4662a84e80f5efca8169bec,
         type: 3}
       propertyPath: m_Volume
       value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5343802019415841755, guid: 9873aba5c4662a84e80f5efca8169bec,
+        type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5430846068731391278, guid: 9873aba5c4662a84e80f5efca8169bec,
         type: 3}
@@ -75493,17 +75529,17 @@ PrefabInstance:
     - target: {fileID: 5704546687912975655, guid: 9873aba5c4662a84e80f5efca8169bec,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5704546687912975655, guid: 9873aba5c4662a84e80f5efca8169bec,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5704546687912975655, guid: 9873aba5c4662a84e80f5efca8169bec,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5704546687912975655, guid: 9873aba5c4662a84e80f5efca8169bec,
         type: 3}
@@ -75579,7 +75615,6 @@ SceneRoots:
   - {fileID: 717233870}
   - {fileID: 210349746}
   - {fileID: 1024209026}
-  - {fileID: 1027029378336061942}
   - {fileID: 407948172}
   - {fileID: 160066356}
   - {fileID: 640836343}

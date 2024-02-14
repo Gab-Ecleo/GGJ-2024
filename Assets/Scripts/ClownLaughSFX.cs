@@ -7,10 +7,13 @@ public class ClownLaughSFX : MonoBehaviour
     [SerializeField] private AudioClip[] clownDialogs;
     [SerializeField] private float laughDelay = 1f;
 
+    private AudioSource audioSource;
     private int index = 0;
 
     private void Awake()
     {
+        audioSource = GetComponent<AudioSource>();
+
         EventManager.ON_LAUGH += OnLaugh;
     }
 
@@ -25,7 +28,7 @@ public class ClownLaughSFX : MonoBehaviour
     {
         yield return new WaitForSeconds(laughDelay);
         //EventManager.ON_MONOSFX(clownDialogs[index]);
-        AudioManager.Instance.PlaySFX(clownDialogs[index]);
+        AudioManager.Instance.PlaySFX(clownDialogs[index], audioSource);
     }
 
     private void OnDestroy()
